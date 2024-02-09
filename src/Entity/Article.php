@@ -23,8 +23,8 @@ class Article
     #[ORM\Column]
     private ?bool $isPublished = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $publishedAt = null;
+    #[ORM\Column]
+    private ?\DateTime $publishedAt = null;
 
     public function getId(): ?int
     {
@@ -67,12 +67,12 @@ class Article
         return $this;
     }
 
-    public function getPublishedAt(): ?\DateTimeInterface
+    public function getPublishedAt(): ?\DateTime
     {
         return $this->publishedAt;
     }
 
-    public function setPublishedAt(?\DateTimeInterface $publishedAt): static
+    public function setPublishedAt(?\DateTime $publishedAt): static
     {
         $this->publishedAt = $publishedAt;
 
